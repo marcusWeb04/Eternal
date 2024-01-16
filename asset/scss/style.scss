@@ -1,0 +1,376 @@
+// On structure le code
+
+// _ pour dire que c'est un module et que l'on ne doit le compiler
+
+// on importe dans cette ordre: 
+// - variables
+// - mixins 
+// - placeholders
+
+@import './_variables';
+@import './_mixins';
+@import './_placeholders';
+
+
+// global
+*,::before,::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: $txt-fond-clair;
+}
+
+ul{
+    list-style: none;
+}
+
+body{
+    background: linear-gradient($fond-blanc,$fond-rose,$fond-pêche);
+}
+
+header{
+    background-color: $fond-noir;
+    @extend %flex-beetween;
+    padding: 0 1%;
+    height: 10vh;
+}
+
+section{
+    height: 100vh;
+}
+
+// classe et id
+
+// modal burger
+.appear{
+    display: block!important;
+}
+
+#modal-burger{
+    display: none;
+    height: 70vh;
+    width: 25vw;
+    background-color: $fond-noir;
+    position: absolute;
+    z-index: 1000;
+    ul{
+        @extend %flex-column-around;
+        height: 100%;
+        li{
+            a{
+                text-align: left;
+                @extend %flex-align-center;
+            p{
+                margin-left: 5%;
+                font-size: 1.2rem;
+                width: 50%;
+                color: $txt-fond-sombre;
+            }
+        }
+    }
+        img{
+            margin-left: 5%;
+            width: 10%;
+        }
+    }
+}
+
+// logo
+.logo{
+    border: none!important;
+    width: 5%!important;
+    position: absolute;
+}
+
+// header FNI
+#title-logo{
+    width: 15%;
+    @extend %flex-beetween;
+    img{
+        width: 30%;
+        border-radius: $logo-radius;
+        cursor: pointer;
+    }
+    h2{
+        color: $txt-fond-sombre;
+    }
+}
+
+
+
+// slider horizontal
+#container-slider-1 {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.item-slider{
+    max-width: 100vw;
+    max-height: 100vh;
+    @extend %img;
+}
+
+.item-slider-2{
+    @extend %flex-around;
+    background-color: aquamarine;
+    width: 100vw;
+    height: 100vh;
+    .container-img{
+        height: 70%;
+        width: 25%;
+        border-radius: 15px;
+        overflow: hidden;
+        @extend %img;
+    }
+}
+
+
+// home FINI
+#home{
+    @extend %flex-around;
+    height: 90vh;
+
+    .part-home{
+        height: 100%;
+        width: 50%;
+    }  
+    .part-home:nth-child(1){
+        @extend %flex-column;
+        h2{
+            text-align: right;
+            font-size: 7vw;
+            margin-bottom: 10%;
+            border-bottom: black solid 5px;
+        }
+        p{
+            width: 60%;
+            font-size: 2vw;
+        }
+    }
+    .part-home:nth-child(2){
+        @extend %flex-center;
+
+        .container-slider{
+            width: 55%;
+            height: 55%;
+            border: 5px solid black;
+            border-radius: 5px;
+            display: flex;
+            overflow: hidden;
+            img{
+                animation: slider-2 10s infinite ease-in-out;
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+// presentation
+#presentation{
+    @extend %flex-around;
+    .part-presentation{
+        width: 50%;
+        height: 100%;
+    }  
+    .part-presentation:nth-child(1){
+        position: relative;
+        @extend %flex-center;
+        img{
+            width: 90%;
+            border: 7px solid black;
+            border-radius: 15px;
+        }
+        .logo{
+            bottom: 19%;
+            left: 92%;
+        }
+    }
+    .part-presentation:nth-child(2){
+        @extend %flex-column;
+        h2{
+            text-align: right;
+            font-size: 3vw;
+            margin-bottom: 10%;
+        }
+        p{
+            width: 60%;
+            font-size: 1.3vw;
+            text-align: justify;
+            word-wrap: break-word;
+            white-space: pre-line;
+        }
+    }
+}
+
+// collection
+#collection{
+    height: fit-content;
+    h2 {
+        height: 10vh;
+        font-size: 2vw;
+        @extend %flex-align-center;
+    }
+
+    h3 {
+        height: 5vh;
+        font-size: 1.5vw;
+        @extend %flex-align-center;
+    }
+    .logo{
+        left: 95%;
+    }
+}
+
+.container-collection{
+    height: 60vh;
+    margin: 2% 0; 
+    overflow: hidden;
+    .collection-1 {
+        height: 100%;
+        width: 100%;
+        gap: 1%;
+        display: flex;
+        align-items: center;
+
+        .item-collection {
+            width: 20%;
+            height: 90%;
+            flex-shrink: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            border-radius: 5px;
+            img{
+                @extend %img;
+            }
+        }
+    }
+}
+
+.container-collection-2{
+    height: 100vh;
+    .main-item{
+        width: 50%;
+        height: 55%;
+        margin-top: 2%;
+        margin-left: auto;
+        margin-right: 1%;
+        border-radius: 15px;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+    .list-item{
+        margin-top: 1%;
+        height: 40%;
+        @extend %flex-around;
+        .item-list{
+            width: 19%;
+            height: 95%;
+            border-radius: 10px;
+            overflow: hidden;
+            img{
+                @extend %img;
+            }
+        }
+    }
+}
+
+.type-collection-1{
+    .item-collection{
+        animation: slider-3 9s infinite ease-in-out;   
+    }
+}
+
+.type-collection-2.collection-1{
+    .item-collection{
+        animation: slider-4 9s infinite ease-in-out;   
+    }
+}
+
+// contact
+#contact{
+    @extend %flex-center;
+}
+.part-contact{
+    width: 50%;
+    height: 100%;
+    padding: 0 0.5%;
+    h2{
+        margin-top: 2%;
+    }
+    p{
+        text-align: justify;
+        word-wrap: break-word;
+        white-space: pre-line;
+        margin-left: 1%;
+    }
+    ul{
+        margin-top: 5%;
+        padding: 1%;
+        @extend %flex-around;
+        li{
+            border: 1px solid black;
+            border-radius: 3px;
+            width: fit-content;
+            padding: 1px 5px;
+        }
+    }
+}
+.part-contact:nth-child(1){
+    p{
+        font-size: 1.1rem;
+    }
+}
+.part-contact:nth-child(2){
+    @extend %flex-center;
+}
+
+form{
+    width: 70%;
+    height: 80%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    button{
+        margin-top: 5%;
+        padding: 2px 25px;
+    }
+}
+
+.top-form{
+    height: 50%;
+    @extend %flex-around;
+    .part-form{
+        width: 35%;
+        @extend %flex-column;
+    }
+}
+
+.container-form{
+    @extend %flex-column;
+    .part-form{
+        width: 35%;
+        @extend %flex-column;
+    }
+}
+
+// footer
+footer{
+    height: 15vh;
+    @extend %flex-beetween;
+    border-top: 1px solid black;
+    img{
+        height: 100%;
+    }
+    ul{
+        width: 50%;
+        height: 100%;
+        @extend %flex-around;
+    }
+}

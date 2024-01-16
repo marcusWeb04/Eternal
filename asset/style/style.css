@@ -1,0 +1,226 @@
+#contact, #presentation .part-presentation:nth-child(1), #home .part-home:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#collection h3, #collection h2 {
+  display: flex;
+  align-items: center;
+}
+
+#presentation .part-presentation:nth-child(2), #home .part-home:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#title-logo, header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-collection-2 .list-item, #presentation, #home, .item-slider-2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@keyframes slider-2 {
+  0%, 40% {
+    transform: translateX(0);
+  }
+  45%, 70% {
+    transform: translateX(-100%);
+  }
+  75%, 95% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translate(-300%);
+  }
+}
+
+.container-collection-2 .list-item .item-list img, .container-collection .collection-1 .item-collection img, .item-slider-2 .container-img, .item-slider {
+  width: 100%;
+  height: 100%;
+}
+
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(#F1F1F1, rgb(255, 228, 225), rgb(255, 229, 180));
+}
+
+header {
+  background-color: #1E1E1E;
+  padding: 0 1%;
+  height: 10vh;
+}
+
+section {
+  height: 100vh;
+}
+
+#title-logo {
+  width: 15%;
+}
+#title-logo img {
+  width: 30%;
+  border-radius: 5px;
+}
+#title-logo h2 {
+  color: #fbfef9;
+}
+
+#logo-burger {
+  width: 4%;
+  cursor: pointer;
+}
+
+#container-slider-1 {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.item-slider {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.item-slider-2 {
+  background-color: aquamarine;
+  width: 100vw;
+  height: 100vh;
+}
+.item-slider-2 .container-img {
+  height: 70%;
+  width: 25%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#home {
+  height: 90vh;
+}
+#home .part-home {
+  height: 100%;
+  width: 50%;
+}
+#home .part-home:nth-child(1) h2 {
+  text-align: right;
+  font-size: 7vw;
+  margin-bottom: 10%;
+  border-bottom: black solid 5px;
+}
+#home .part-home:nth-child(1) p {
+  width: 60%;
+  font-size: 2vw;
+}
+#home .part-home:nth-child(2) .container-slider {
+  width: 55%;
+  height: 55%;
+  border: 5px solid black;
+  border-radius: 5px;
+  display: flex;
+  overflow: hidden;
+}
+#home .part-home:nth-child(2) .container-slider img {
+  animation: slider-2 10s infinite ease-in-out;
+  min-width: 100%;
+}
+
+#presentation .part-presentation {
+  width: 50%;
+  height: 100%;
+}
+#presentation .part-presentation:nth-child(1) img {
+  width: 90%;
+  border: 7px solid black;
+  border-radius: 15px;
+}
+#presentation .part-presentation:nth-child(2) h2 {
+  text-align: right;
+  font-size: 3vw;
+  margin-bottom: 10%;
+}
+#presentation .part-presentation:nth-child(2) p {
+  width: 60%;
+  font-size: 1.3vw;
+  text-align: justify;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+#collection {
+  height: fit-content;
+}
+#collection h2 {
+  height: 10vh;
+  font-size: 2vw;
+}
+#collection h3 {
+  height: 5vh;
+  font-size: 1.5vw;
+}
+
+.container-collection {
+  height: 60vh;
+  margin: 2% 0;
+  overflow: hidden;
+}
+.container-collection .collection-1 {
+  height: 100%;
+  width: 100%;
+  gap: 1%;
+  display: flex;
+  align-items: center;
+}
+.container-collection .collection-1 .item-collection {
+  width: 20%;
+  height: 90%;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.container-collection-2 {
+  height: 100vh;
+}
+.container-collection-2 .main-item {
+  width: 50%;
+  height: 55%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: 1%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.container-collection-2 .main-item img {
+  width: 100%;
+}
+.container-collection-2 .list-item {
+  margin-top: 1%;
+  height: 40%;
+}
+.container-collection-2 .list-item .item-list {
+  width: 19%;
+  height: 95%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.part-contact {
+  width: 50%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+/*# sourceMappingURL=style.css.map */
