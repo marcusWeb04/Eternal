@@ -364,4 +364,7 @@ footer img {
 footer ul {
   width: 50%;
   height: 100%;
+}
+footer ul li {
+  width: 35%;
 }/*# sourceMappingURL=style.css.map */

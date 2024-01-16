@@ -372,5 +372,8 @@ footer{
         width: 50%;
         height: 100%;
         @extend %flex-around;
+        li{
+            width: 35%;
+        }
     }
 }
